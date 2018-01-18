@@ -2,4 +2,4 @@
 
 ## Marie Duchene
 
-[Visit Google.com]{http://google.com}
+[Visit Google.com](http://google.com)
