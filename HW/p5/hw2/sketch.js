@@ -1,7 +1,7 @@
 var centerX = 100;
 var centerY = 200;
 
-createCanvas(800,800);
+createCanvas(400,400);
 background(255);
 }
 
