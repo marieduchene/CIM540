@@ -9,7 +9,7 @@ var truthordare2 = false;
 
 function setup() {
   // put setup code here
-
+  console.lol("Hello World");
 }
 
 function draw() {
