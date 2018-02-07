@@ -9,10 +9,22 @@ var truthordare2 = false;
 
 function setup() {
   // put setup code here
-  console.lol("Hello World");
+  console.log("Hello World");
+  console.log(number1);
+  console.log("The value of letter2");
+  console.log(number1 + number2);
+
+  var addNumber = number1 + number2;
+  console.log(addNumber);
+
+
 }
 
 function draw() {
   // put drawing code here\
+  //console.log("mouseX: " + mouseX);
+  //This will not work, addNumber is not in draws scope, console.log(addNumber);
+
+
 
 }

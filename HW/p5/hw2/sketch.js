@@ -1,16 +1,18 @@
-var centerX = 100;
+var centerX = 350;
 var centerY = 200;
 
 
 function setup() {
   // put setup code here
 
-  createCanvas(400,400);
-  background(255);
+  createCanvas(650,900);
+  background(255,150,150);
 
-  background(255,109,109);
-  centerX = mouseX;
-  centerY = mouseY;
+  //centerX = mouseX;
+  //centerY = mouseY;
+
+  centerX = width/2;
+  centerY = height/2;
   stroke(2);
   strokeWeight(4);
 }
@@ -18,28 +20,38 @@ function setup() {
 function draw() {
   // put drawing code here
 
-  background(252,179,176);
-  centerX = mouseX;
-  centerY = mouseY;
-  stroke(0);
-  strokeWeight(1);
+  //centerX = mouseX;
+  //centerY = mouseY;
 
-  fill("white");
-  rect(centerX -150,centerY -100,100,100);
-  ellipse(centerX-100,centerY-50,50);
-  rect(centerX + 25,centerY -100,100,100);
-  ellipse(centerX +75,centerY -50,50,75);
+  //face
+  ellipse(300,300,300,300);
 
-  stroke(125);
-  strokeWeight(5);
-  point(centerX, centerY);
+  //front
+  ellipse(300,200,50,50);
+  ellipse(300,200,40,40);
+  ellipse(300,200,30,30);
+  ellipse(300,200,20,20);
+  ellipse(300,200,10,10);
 
-  stroke(255,0,0);
-  line(centerX-50,centerY+50,centerX +50, centerY+50);
+  //eyes
+  ellipse(230,280,-80,80);
+  ellipse(370,280,-80,80);
+  ellipse(230,280,-20,20);
+  ellipse(230,280,-10,10);
+  ellipse(370,280,-30,30);
+  ellipse(370,280,-20,20);
+  ellipse(370,280,-10,10);
 
-  noStroke();
-  fill(0,0,255);
-  triangle(centerX,centerY,centerX +25, centerY +25, centerX -25, centerY +25);
+
+  //mouth
+  rect(250,370,100,30);
+  rect(250,370,20,30);
+  rect(270,370,20,30);
+  rect(290,370,20,30);
+  rect(310,370,20,30);
+
+
+
 
 
 }
