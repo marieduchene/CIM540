@@ -32,7 +32,7 @@ function draw() {
   //face
   ellipse(300,300,300,300);
 
-  //front
+  //weirdfront
   ellipse(300,200,50,50);
   ellipse(300,200,40,40);
   ellipse(300,200,30,30);
@@ -64,6 +64,7 @@ function draw() {
   fill(55,120,100);
   rect(150,450,300,400);
 
+  //buttons
   fill(100,100,500);
   ellipse(300,500,20 ,20);
   ellipse(300,550,20 ,20);
@@ -71,6 +72,7 @@ function draw() {
   ellipse(300,650,20 ,20);
   ellipse(300,700,20 ,20);
 
+  //legs
   rect(150,750,150,100);
   rect(300,750,150,100);
 
