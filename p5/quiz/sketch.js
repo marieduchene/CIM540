@@ -5,6 +5,7 @@ var currentQuestion = 0;
 var answers = ["false","atlantic"];
 
 
+var currentOption = -1;
 
 function setup() {
   // put setup code here
@@ -21,7 +22,12 @@ function draw() {
   for(var i = 0; i<options[currentQuestion].length; i++){
     console.log(options[currentQuestion][i]);
     text(options[currentQuestion][i], 10 + (100*i),200);
-    var currentDist = dist();
+    var currentDist = dist(mouseX, mouseY,30 + (100*i),200);
+
+    if(currentDist < 20){
+      currentOption = i;
+      text("Your current option is:" + options[currentQuestion][currentOption],20,120);
+    }
 
 
   }
