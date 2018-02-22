@@ -14,6 +14,8 @@ function setup() {
   createCanvas(650,900);
   background(255,150,150);
 
+  button = createButton("Touch Me");
+
   //centerX = mouseX;
   //centerY = mouseY;
 
