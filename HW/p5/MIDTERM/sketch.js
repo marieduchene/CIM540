@@ -23,7 +23,10 @@ var eyebrowR;
 var eyebrowRPoints = [490,215];
 
 var eyeL;
-var eyeLPoints = (340,400);
+var eyeLPoints = [353,260];
+
+var eyeR;
+var eyeRPoints = [489,260];
 
 
 
@@ -43,6 +46,7 @@ function preload(){
     eyebrowL = loadImage("assets/eyebrowL.png");
     eyebrowR = loadImage("assets/eyebrowR.png");
     eyeL = loadImage("assets/eyeL.png");
+    eyeR = loadImage("assets/eyeR.png");
 
 }
 
@@ -156,17 +160,18 @@ if(checkERDist <40 || everything == true){
 
 
 //LEFT EYE//
-ellipse(eyeLPoints[0],eyeLPoints[1],10,10);
+ellipse(eyeLPoints[0],eyeLPoints[1],7,7);
 
 var checkELEDist = dist(mouseX,mouseY,eyeLPoints[0],eyeLPoints[1]);
 if(checkELEDist <40 || everything == true){
   image(eyeL,0,0);
-
 }
 
 
+//RIGHT EYE//
+ellipse(eyeRPoints[0],eyeRPoints[1],7,7);
 
-
-
-
+var checkEREDist = dist(mouseX,mouseY,eyeRPoints[0],eyeRPoints[1]);
+if(checkEREDist <40) || everything == true){
+  image(eyeR,0,0);
 }
