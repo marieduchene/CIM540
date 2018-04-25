@@ -8,8 +8,11 @@ var interval = 5000;
 var shapes = [];
 
 function setup() {
-    createCanvas(400, 400);
-    
+    createCanvas(1080, 1920);
+
+var mic;
+
+
 
     //shape1 = new shape(random(width), random(height), 100,200, "rect");
     //shape2 = new shape(random(width), random(height), 100,100, "ellipse");
@@ -21,6 +24,14 @@ function setup() {
     }
 
 }
+
+
+function setup(){
+  mic = new p5.AudioIn()
+  mic.start();
+}
+
+
 
 function draw() {
     background(255);
@@ -36,7 +47,7 @@ function draw() {
       //shape1.x = random(width);
       //shape1.y = random(height);
       for(var i = 0; i<shapes.length; i++){
-        shapes[i].scale = random(0,1.5);
+        shapes[i].scale = random(0,1.5); // based off of mic level
       }
       prevMillis = millis();
       //shape1.type = "ellipse";
@@ -76,4 +87,11 @@ function shape(tempX, tempY, tempWidth, tempHeight, tempType) {
     }
 
 
+}
+
+function mousePressed() {
+  if (mouseX > 0 && mouseX < 100 && mouseY > 0 && mouseY < 100) {
+    var fs = fullscreen();
+    fullscreen(!fs);
+  }
 }
