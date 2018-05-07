@@ -11,9 +11,9 @@ var mic;
 
 var micLevel;
 
-var shapeTypes = ["rect","ellipse","arc","line","point"];
+var shapeTypes = ["balloons","cat","cherry","heart","pineapple","rainbow","smile","star","thunder"];
 
-var backPallet = ["#C91818", "#ffffff", "#333333", "#666666"];
+var backPallet = ["#FDFFBB", "#FFCCCC", "#FCB6DC", "#FCC5F8","#E7C5FC","#E1CCFF","#CCCCFF","#B4F2FC","#B6FFEA","#C2FFCF","#D6FCB6","#FCD98B","#FCB892"];
 
 function setup() {
     createCanvas(1920, 1080);
@@ -27,14 +27,14 @@ function setup() {
       shapes.push(new shape(random(width), random(height), 100,200, "rect"));
       shapes[i].images = loadImage("assets/balloons.png");
 
-   shapes[1].images = loadImage("assets/cat.png");
-   shapes[2].images = loadImage("assets/cherry.png");
-   shapes[3].images = loadImage("assets/heart.png");
-   shapes[4].images = loadImage("assets/pineapple.png");
-   shapes[5].images = loadImage("assets/rainbow.png");
-   shapes[6].images = loadImage("assets/smile.png");
-   shapes[7].images = loadImage("assets/star.png");
-   shapes[8].images = loadImage("assets/thunder.png");
+     shapes[1].images = loadImage("assets/cat.png");
+     shapes[2].images = loadImage("assets/cherry.png");
+     shapes[3].images = loadImage("assets/heart.png");
+     shapes[4].images = loadImage("assets/pineapple.png");
+     shapes[5].images = loadImage("assets/rainbow.png");
+     shapes[6].images = loadImage("assets/smile.png");
+     shapes[7].images = loadImage("assets/star.png");
+     shapes[8].images = loadImage("assets/thunder.png");
 
      }
 
@@ -58,11 +58,11 @@ function draw() {
       for(var i = 0; i<shapes.length; i++){
         var curShape = int(random(0,shapeTypes.length))
         shapes[i].type = shapeTypes[curShape];
-        //shapes[i].x = random(0,width);
-        //shapes[i].y = random(0,height);
-        shapes[i].r = random(0, 255);
-        shapes[i].g = random(0, 255);
-        shapes[i].b = random(0, 255);
+        shapes[i].x = random(0,width);
+        shapes[i].y = random(0,height);
+        //shapes[i].r = random(0, 255);
+        //shapes[i].g = random(0, 255);
+        //shapes[i].b = random(0, 255);
 
       }
 
