@@ -11,19 +11,34 @@ var mic;
 
 var micLevel;
 
-var shapeTypes = ["rect","ellipse"];
+var shapeTypes = ["rect","ellipse","arc","line","point"];
+
+var backPallet = ["#C91818", "#ffffff", "#333333", "#666666"];
 
 function setup() {
-    createCanvas(1080, 1920);
+    createCanvas(1920, 1080);
 
     //shape1 = new shape(random(width), random(height), 100,200, "rect");
     //shape2 = new shape(random(width), random(height), 100,100, "ellipse");
 
     //shapes.push(new shape(random(width), random(height), 100,200, "rect"));
 
-    for(var i = 0; i<5; i++){
+    for(var i = 0; i<8; i++){
       shapes.push(new shape(random(width), random(height), 100,200, "rect"));
-    }
+      shapes[i].images = loadImage("assets/balloons.png");
+
+   shapes[1].images = loadImage("assets/cat.png");
+   shapes[2].images = loadImage("assets/cherry.png");
+   shapes[3].images = loadImage("assets/heart.png");
+   shapes[4].images = loadImage("assets/pineapple.png");
+   shapes[5].images = loadImage("assets/rainbow.png");
+   shapes[6].images = loadImage("assets/smile.png");
+   shapes[7].images = loadImage("assets/star.png");
+   shapes[8].images = loadImage("assets/thunder.png");
+
+     }
+
+
 
     mic = new p5.AudioIn()
     mic.start();
@@ -39,17 +54,27 @@ function draw() {
     micLevel = mic.getLevel() * 100;
     console.log(micLevel);
 
-    if(micLevel > 4){
+    if(micLevel > 3){
       for(var i = 0; i<shapes.length; i++){
         var curShape = int(random(0,shapeTypes.length))
         shapes[i].type = shapeTypes[curShape];
+        //shapes[i].x = random(0,width);
+        //shapes[i].y = random(0,height);
         shapes[i].r = random(0, 255);
         shapes[i].g = random(0, 255);
         shapes[i].b = random(0, 255);
-        background(random(0, 255),random(0, 255),random(0, 255));
 
       }
+
     }
+
+    if(micLevel > 15){
+      //background(random(0, 255),random(0, 255),random(0, 255));
+      var backRand = int(random(0,backPallet.length));
+      background(backPallet[backRand]);
+    }
+
+
 
     //shape1.display();
     //shape2.display();
@@ -91,18 +116,76 @@ function shape(tempX, tempY, tempWidth, tempHeight, tempType) {
     this.r = 0;
     this.g = 0;
     this.b = 0;
+    this.images;
 
     this.display = function () {
       fill(this.r,this.g,this.b);
-      push();
-      scale(this.scale);
-      if(this.type == "rect"){
-        rect(this.x, this.y, this.width, this.height);
-      }else if(this.type == "ellipse"){
+
+      if(this.type == "balloons"){
+        //rect(this.x, this.y, this.width, this.height);
+        push();
+        translate(this.x, this.y);
+        scale(1.0, this.scale);
+        image(this.images, 0,0);
+        pop();
+      }else if(this.type == "cat"){
+        push();
+        translate(this.x, this.y);
+        scale(this.scale);
         ellipse(this.x, this.y, this.width, this.height);
+        //image(this.images, 0,0);
+        pop();
+      }else if(this.type == "cherry"){
+        push();
+        translate(this.x, this.y);
+        scale(this.scale);
+        ellipse(this.x, this.y, this.width, this.height);
+        //image(this.images, 0,0);
+        pop();
+      }else if(this.type == "heart"){
+        push();
+        translate(this.x, this.y);
+        scale(this.scale);
+        ellipse(this.x, this.y, this.width, this.height);
+        //image(this.images, 0,0);
+        pop();
+      }else if(this.type == "pineapple"){
+        push();
+        translate(this.x, this.y);
+        scale(this.scale);
+        ellipse(this.x, this.y, this.width, this.height);
+        //image(this.images, 0,0);
+        pop();
+      }else if(this.type == "rainbow"){
+        push();
+        translate(this.x, this.y);
+        scale(this.scale);
+        ellipse(this.x, this.y, this.width, this.height);
+        //image(this.images, 0,0);
+        pop();
+      }else if(this.type == "smile"){
+        push();
+        translate(this.x, this.y);
+        scale(this.scale);
+        ellipse(this.x, this.y, this.width, this.height);
+        //image(this.images, 0,0);
+        pop();
+      }else if(this.type == "star"){
+        push();
+        translate(this.x, this.y);
+        scale(this.scale);
+        ellipse(this.x, this.y, this.width, this.height);
+        //image(this.images, 0,0);
+        pop();
+      }else if(this.type == "thunder"){
+        push();
+        translate(this.x, this.y);
+        scale(this.scale);
+        ellipse(this.x, this.y, this.width, this.height);
+        //image(this.images, 0,0);
+        pop();
       }
 
-      pop();
 
     }
 
