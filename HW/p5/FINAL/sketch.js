@@ -27,6 +27,9 @@ function setup() {
       shapes.push(new shape(random(width), random(height), 100,200, "rect"));
       shapes[i].images = loadImage("assets/balloons.png");
 
+
+     }
+
      shapes[1].images = loadImage("assets/cat.png");
      shapes[2].images = loadImage("assets/cherry.png");
      shapes[3].images = loadImage("assets/heart.png");
@@ -35,10 +38,6 @@ function setup() {
      shapes[6].images = loadImage("assets/smile.png");
      shapes[7].images = loadImage("assets/star.png");
      shapes[8].images = loadImage("assets/thunder.png");
-
-     }
-
-
 
     mic = new p5.AudioIn()
     mic.start();
