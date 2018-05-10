@@ -23,11 +23,9 @@ function setup() {
 
     //shapes.push(new shape(random(width), random(height), 100,200, "rect"));
 
-    for(var i = 0; i<8; i++){
-      shapes.push(new shape(random(width), random(height), 100,200, "rect"));
+    for(var i = 0; i<=8; i++){
+      shapes.push(new shape((width), (height), 100,200, "rect"));
       shapes[i].images = loadImage("assets/balloons.png");
-
-
      }
 
      shapes[1].images = loadImage("assets/cat.png");
